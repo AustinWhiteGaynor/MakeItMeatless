@@ -1,14 +1,12 @@
 """ This file largely follows the steps outlined in the Insight Flask tutorial, except data is stored in a
-flat csv (./assets/births2012_downsampled.csv) vs. a postgres database. If you have a large database, or
+json vs. a postgres database. If you have a large database, or
 want to build experience working with SQL databases, you should refer to the Flask tutorial for instructions on how to
 query a SQL database from here instead.
 
-May 2019, Donald Lee-Brown
 """
 
 from flask import render_template
-from flaskexample import app
-from flaskexample.a_model import ModelIt
+from app import app
 import pandas as pd
 from flask import request
 import pickle
