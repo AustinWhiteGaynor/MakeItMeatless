@@ -1,27 +1,13 @@
-""" This file largely follows the steps outlined in the Insight Flask tutorial, except data is stored in a
-flat csv (./assets/births2012_downsampled.csv) vs. a postgres database. If you have a large database, or
-want to build experience working with SQL databases, you should refer to the Flask tutorial for instructions on how to
-query a SQL database from here instead.
+#!/usr/bin/env python
 
-May 2019, Donald Lee-Brown
-"""
-
-from flask import render_template
-from flaskexample import app
-from flaskexample.a_model import ModelIt
+from flask import Flask, render_template, request
 import pandas as pd
-from flask import request
 import pickle
-
 import recipe2vec
-
-import pandas as pd
 import json
 import os
 import pandas as pd
-import json
 import numpy as np
-import matplotlib.pyplot as plt
 import nltk 
 from nltk.tokenize import word_tokenize, sent_tokenize
 import math
@@ -36,6 +22,12 @@ from nltk.corpus import stopwords
 lemmer = nltk.stem.WordNetLemmatizer()
 stemmer = nltk.stem.porter.PorterStemmer()
 from sklearn.metrics.pairwise import linear_kernel
+
+
+
+app = Flask(__name__)
+
+
 
 # here's the homepage
 @app.route('/')
@@ -76,5 +68,8 @@ def product():
 			url2 = 'url not a good recipe'
 		return render_template("result.html", url1 = url1, title1 = title1, title2 = title2, url2 = url2)
 
-# now let's do something fancier - take an input, run it through a model, and display the output on a separate page
-
+if __name__ == '__main__':
+    # This is used when running locally. Gunicorn is used to run the
+    # application on Google App Engine. See entrypoint in app.yaml.
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+    

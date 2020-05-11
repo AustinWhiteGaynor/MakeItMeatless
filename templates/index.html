@@ -1,4 +1,3 @@
-
 <!-- This template built from the standard bootstrap template downloaded from
 https://getbootstrap.com/docs/3.3/getting-started/#examples
  It contains the standard bootstrap interface objects as well as basic examples of common web app formats
@@ -50,21 +49,11 @@ https://getbootstrap.com/docs/3.3/getting-started/#examples
         <p>Easily transition to meatless cooking through your favorite recipes.</a> </p>
       </div>
 
-      <form action = "http://localhost:5000/result" method = "POST">
+      <form action = "/result" method = "POST">
          <p>Input your recipe here: <input type = "text" name = "Name" value="" /></p>
          <p><input type = "submit" class="btn btn-lg btn-success" value = "MakeItMeatless"/></p>
       </form>
 
-      <table border = 1, align="center">
-      	<tr>
-      		<th> {{ title1 }} </th>
-      		<td> {{ url1 }} </td>
-      	</tr>
-      	<tr>
-      		<th> {{ title2 }} </th>
-      		<td><a href={{ url2 }}  >Try this alternative, meat-free recipe! </a> </td>
-		</tr>
-	   </table>
       
 
 

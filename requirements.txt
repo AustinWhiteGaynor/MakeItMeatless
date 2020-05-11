@@ -1,0 +1,9 @@
+flask
+pandas
+numpy
+nltk
+sklearn
+scipy
+recipe-scrapers
+google-python-cloud-debugger
+gunicorn 

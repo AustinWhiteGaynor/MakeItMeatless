@@ -13,6 +13,8 @@ from scipy.sparse import coo_matrix
 from sklearn.metrics.pairwise import cosine_similarity
 from recipe_scrapers import scrape_me
 from nltk.corpus import stopwords
+nltk.download('wordnet')
+nltk.download('stopwords')
 lemmer = nltk.stem.WordNetLemmatizer()
 stemmer = nltk.stem.porter.PorterStemmer()
 from sklearn.metrics.pairwise import linear_kernel
