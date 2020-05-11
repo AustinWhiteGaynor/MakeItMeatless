@@ -11,7 +11,7 @@ https://my-flask-image-kjsyrythxq-ue.a.run.app/
 
 ### *UNDER THE HOOD*
 
-The input recipe will be scraped and passed through a trained **logistic regression** model that predicts the role in the meal that the recipe plays (dinner, dessert, etc). After determining the dish type, the combined title and instructions text is run through a **TFIDF** calc, with weights for verbs (spacy) from the instructions increased.
+The input recipe will be scraped and passed through a trained **logistic regression** model that predicts the role in the meal that the recipe plays (dinner, dessert, etc). After determining the dish type, the combined text from the title and instructions is run through **TFIDF** calculations, with weights for verbs (spacy) from the instructions increased.
 
 Following this transformation, the **cosine similarity** between the TFIDF vector and a corpus of recipes is used to return the most similar vegetarian recipe (still fitting the dish type).
 
