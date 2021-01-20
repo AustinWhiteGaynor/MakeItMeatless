@@ -1,7 +1,6 @@
 # MakeItMeatless
 
-Please visit
-https://my-flask-image-kjsyrythxq-ue.a.run.app/
+Please visit: Currently Offline
 
 **Input:** Non-vegetarian recipe url from allrecipes.com or epicurious.com
 
